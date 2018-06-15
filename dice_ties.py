@@ -1,8 +1,9 @@
 import numpy as np
+import sys
 
 num_episodes = 5
 num_trials = int(2.5 * 10**6)
-num_dice = 5
+num_dice = int(sys.argv[1])
 
 for _ in range(num_episodes):
 	roll_A = 0
