@@ -1,9 +1,10 @@
 import numpy as np
 import sys
 
-num_simulations = 5
-num_trials = int(8 * 10**6)
+num_simulations = 100
+num_trials = int(5 * 10**6)
 num_dice = int(sys.argv[1])
+results = []
 
 for _ in range(num_simulations):
 	roll_A = 0
@@ -13,4 +14,6 @@ for _ in range(num_simulations):
 		roll_B += np.random.randint(1, 7, size = num_trials)
 
 	ties = roll_A == roll_B
-	print(np.sum(ties) / num_trials)
+	results.append(np.sum(ties) / num_trials)
+
+print(np.mean(results))
